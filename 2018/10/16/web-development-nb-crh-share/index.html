@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="CRH&NB前端分享">
+
+
+
+<meta name="keywords" content="前端分享, 框架介绍, 架构改进, 牛邦, 财人汇, CRH, TradeNB, 林宇,linyupark,Web Development,前端开发,Skills,效率技巧,Memo,排雷备忘,Life,生活琐记">
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Linyupark's Thinking">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://linyupark.github.io/2018/10/16/web-development-nb-crh-share/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6bd6526bb5edf6ff35c3cbd4d254682d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> CRH&NB前端分享 - Linyupark's Thinking </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Linyupark's Thinking</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Linyupark's Thinking<small>宇思录</small></a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          CRH&NB前端分享
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-16
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/web-development/">前端开发</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#探讨点抛出"><span class="toc-text">探讨点抛出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#架构更新"><span class="toc-text">架构更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提高组件代码的质量"><span class="toc-text">提高组件代码的质量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mock-数据-amp-数据替换代理"><span class="toc-text">Mock 数据 &amp; 数据替换代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目结构"><span class="toc-text">项目结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后端接口相关"><span class="toc-text">后端接口相关</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h2 id="探讨点抛出"><a href="#探讨点抛出" class="headerlink" title="探讨点抛出"></a>探讨点抛出</h2><ul>
+<li>维护中的项目技术架构有些陈旧，如何切入新的技术框架</li>
+<li>组件式开发提高代码质量，复用性，扩展性的一些技巧</li>
+<li>与后端接口的联调效率问题</li>
+<li>其他</li>
+</ul>
+<a id="more"></a>
+<h2 id="架构更新"><a href="#架构更新" class="headerlink" title="架构更新"></a>架构更新</h2><p>目前前端开发框架各项比较</p>
+<p><strong>非主流优秀框架简单介绍</strong>: <a href="https://svelte.technology/" target="_blank" rel="noopener">Svelte</a>、<a href="https://mithril.js.org/index.html" target="_blank" rel="noopener">Mithril</a></p>
+<p><strong>接口数量及复杂</strong>: <code>Angular6 (500+) &gt; Vue2 (100+) &gt; React16 (50-)</code></p>
+<p><strong>国内开发者基础</strong>: <code>Vue ~= React &gt; Angular</code></p>
+<ul>
+<li>React </li>
+</ul>
+<blockquote>
+<p>之前的协议问题导致不少开发者流出，大厂还是有大量优质组件是React开发的如 AntDesign</p>
+</blockquote>
+<ul>
+<li>Vue </li>
+</ul>
+<blockquote>
+<p>优秀的中文文档以及因有类似小程序这样的平台框架语法类似因此开发者数量较大，大厂也有Eleme跟AntV以及Vant等成熟开源组件库</p>
+</blockquote>
+<ul>
+<li>Angular </li>
+</ul>
+<blockquote>
+<p>有google背书 UI 有知名的 Material跟Ionic，其1.x的开发者还是不少，到2.x+后因不向下兼容强跟typescript结合开发流失了不少开发者。</p>
+</blockquote>
+<p><strong>框架附加组件量</strong>: <code>Angular &gt; Vue &gt; React</code></p>
+<ul>
+<li>Angular</li>
+</ul>
+<blockquote>
+<p>倾向企业级开发，方案都是集成度很高的，路由、Http、Form、Validator甚至打包（跟目前财人汇用到的F7有点类似）</p>
+</blockquote>
+<ul>
+<li>Vue </li>
+</ul>
+<blockquote>
+<p>讨巧的只引入了一般项目必要的组件，路由、状态控制、通讯用的observe，很轻量级因此能保持一个较小的体积，且能保证这些核心组件的稳定跟质量，虽然最大的问题是 Vue实际的主导者只有作者本人。</p>
+</blockquote>
+<ul>
+<li>React </li>
+</ul>
+<blockquote>
+<p>视开发者都是大神，提供了一个灵活的核心后其他的一切都随你去引入，这个导致的后果是很多初级开发者在react router这里就卡了壳 2.x、3.x、4.x、native、web ？想component根据路由按需加载？又得自己diy一个组件（<a href="https://www.npmjs.com/package/react-router-async-component" target="_blank" rel="noopener">当时自己被逼写的</a>）一个完整的React核心的项目因引入了大量开源社区质量程度不一的组件后导致项目稳定性需要一个相对熟悉这些组件的人去把控，难度变得较高。</p>
+</blockquote>
+<p><strong>组件颗粒程度</strong>：<code>Angular ~= Vue ~= React</code></p>
+<ul>
+<li>Angular 跟 Vue </li>
+</ul>
+<blockquote>
+<p>都有一套自己的模板引擎，组件的引入也基本是需要在某处声明后再引入模板内。组件之间的通讯除了直接引用属性方法外都有一个EventEmitter的工具提供（Vue里是eventBus），解耦方面善用这个方式可以摆脱组件层级的限制。</p>
+</blockquote>
+<ul>
+<li>React</li>
+</ul>
+<blockquote>
+<p>有vdom因此模板引擎是不需要的，通过babel这类转义工具可以很方便的使用js原生的方式去做一些逻辑业务。组件通讯方面没有全局的监听工具因此需要自己引入。</p>
+</blockquote>
+<p><strong>个人开发感受</strong>: </p>
+<ul>
+<li>Angular1.x+Ionic</li>
+</ul>
+<blockquote>
+<p>兼容性较好，性能较差，写法比较刻板（企业级框架的特色）2.x+因为后续没有继续使用没有更多的感受。</p>
+</blockquote>
+<ul>
+<li>React15/16 + (Redux / Mobx) + AntD</li>
+</ul>
+<blockquote>
+<p>分别开发过2个业务比较复杂的后台项目，搭建初期会消耗非常的大的精力在路由、加载策略以及状态管理选择上，React 的 state跟props 在大多数新手开发的时候都会遇到不少问题（刷新机制）且在性能上如果写法上稍有不注意就容易出问题，API少但灵活的框架对开发人员的要求其实更高，view层中频繁写入匿名函数是常见的一种偷懒写法，直接导致业务代码抽离能力减弱。</p>
+</blockquote>
+<ul>
+<li>Vue </li>
+</ul>
+<blockquote>
+<p>因为全家桶，大多数不需要细致定制的项目几乎都可以开箱即用。相对比较弱的应该是Vuex部分，相比其他API不太容易理解，mutation 跟 action 比较多的新手都没明白区别，在引入第三方的库上也没有很好的支持，不像React你真的理解不了Redux可以用相对容易理解的Mobx。好在大多数Vue项目用不到状态管理。缺陷是如果不是用class模式的组件在编辑器里没办法提示组件所提供的属性以及方法名，经常需要打开组件代码去看，效率上相对低一些。</p>
+</blockquote>
+<p><strong>综合考虑下的选择</strong></p>
+<p>NB目前所有的前端项目，排除服务端渲染的全部使用 <code>Vue</code> 为主力开发框架。理由：</p>
+<ul>
+<li>引入的学习成本相对较小（React需要了解一堆其他的开源库、Angular则需要先熟悉TypeScript以及他那500+的API)</li>
+<li>大量的成熟业务组件可复用（ElementUI,Vant…）</li>
+<li>样式的超集选择比较灵活(lang=*来决定)以及作用域相对可控（加不加属性scoped），React的CSSInJS以及CSSModule依然需要很高的学习跟维护成本。</li>
+<li>DIY一个组件的难度相对简单，React还区别 <code>stateless</code>、<code>purecomponent</code>等各种不停形态的组件以提升性能。</li>
+<li>组件的写法方式较为统一，React因为是纯ESClass的方式，因此Webpack中Babel对应的ESstage决定了定义Class代码的样，举例</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">super</span>();</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      name: <span class="string">'React'</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">this</span>.clickHandle = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  clickHandle() &#123;&#125;;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (&lt;div onClick=&#123;this.clickHandle&#125;&gt;Hello, &#123;this.state.name&#125;&lt;/div&gt;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用Antd高阶组件Form</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Form.create()(App);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种写法开启修饰符特性</span></span><br><span class="line">@Form.create()</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 较新的es构建属性写法  </span></span><br><span class="line">  state = &#123;</span><br><span class="line">    name: <span class="string">'React'</span></span><br><span class="line">  &#125;;</span><br><span class="line">  clickHandle = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; name &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">    <span class="keyword">return</span> (&lt;div onClick=&#123;this.clickHandle&#125;&gt;Hello, &#123;name&#125;&lt;/div&gt;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>打包构建速度相对较快，打包后的体积也较小，在H5下比react有一定优势。React虽然可以通过其他方式减少体积（如preact等）但后遗症是一些组件稳定性跟兼容性会不可控。</li>
+</ul>
+<p><strong>老项目的迁移步骤</strong></p>
+<ul>
+<li>利用组件化的特性，在原有项目上做逐步的迁移。举例 F7框架项目，下面是步骤代码示例：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// gulp中先引入用于编译 Vue 组件的模块</span></span><br><span class="line"><span class="comment">// npm install babel-core babel-preset-env gulp-babel </span></span><br><span class="line"><span class="comment">// gulp-rename gulp-vue-single-file-component --save-dev</span></span><br><span class="line"><span class="keyword">var</span> vueComponent = <span class="built_in">require</span>(<span class="string">'gulp-vue-single-file-component'</span>);</span><br><span class="line"><span class="keyword">var</span> rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>);</span><br><span class="line"><span class="keyword">var</span> babel = <span class="built_in">require</span>(<span class="string">'gulp-babel'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个编译 Vue 的任务</span></span><br><span class="line">gulp.task(<span class="string">'vue'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp</span><br><span class="line">    .src(<span class="string">'./src/components/src/**/*.vue'</span>)</span><br><span class="line">    .pipe(vueComponent(&#123; <span class="attr">debug</span>: <span class="literal">true</span>, <span class="attr">loadCssMethod</span>: <span class="string">'loadCss'</span> &#125;))</span><br><span class="line">    .pipe(babel(&#123; <span class="attr">plugins</span>: <span class="string">'transform-es2015-modules-amd'</span> &#125;))</span><br><span class="line">    .pipe(rename(&#123; <span class="attr">extname</span>: <span class="string">'.js'</span> &#125;))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./src/components/public'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 找到项目中 requirejs config 部分，将 Vue编译后的js目录指向 paths</span></span><br><span class="line"><span class="built_in">require</span>.config(&#123;</span><br><span class="line">  ...</span><br><span class="line">  paths: &#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">'Vue'</span>: <span class="string">'//cdn.jsdelivr.net/npm/vue/dist/vue'</span>,</span><br><span class="line">    <span class="string">'@'</span>: <span class="string">'../components/public'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// F7依然先完成 Router以及controller载入的工作，在初始化的时候将 Vue组件挂载上去</span></span><br><span class="line"><span class="comment">// xxx.controller.js</span></span><br><span class="line"></span><br><span class="line">define([</span><br><span class="line">  <span class="string">'api'</span>,</span><br><span class="line">  <span class="string">'Vue'</span>,</span><br><span class="line">  <span class="string">'@/navbar'</span>,</span><br><span class="line">  <span class="string">'@/testPage'</span></span><br><span class="line">], <span class="function"><span class="keyword">function</span>(<span class="params">Api, Vue, Navbar, TestPage</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 避免动态渲染的内容覆盖，先清除原有内容</span></span><br><span class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'.navbar'</span>).innerHTML = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 顶部组件</span></span><br><span class="line"><span class="comment">     * @type &#123;Navbar&#125;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">var</span> CNavbar = <span class="keyword">new</span> Vue.extend(Navbar)(&#123;</span><br><span class="line">      el: <span class="built_in">document</span>.querySelector(<span class="string">'.navbar'</span>),</span><br><span class="line">      propsData: &#123;</span><br><span class="line">        styleId: <span class="number">0</span>,</span><br><span class="line">        left: <span class="string">'&lt;i class="icon icon-back"&gt;&lt;/i&gt;'</span>,</span><br><span class="line">        title: <span class="string">'我的特权'</span>,</span><br><span class="line">        right: <span class="string">'会员规则'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 可以处理一些监听事件</span></span><br><span class="line">    CNavbar.$on(<span class="string">'onRightClick'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;...&#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 主页面内容</span></span><br><span class="line"><span class="comment">     * @type &#123;TestPage&#125;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">var</span> CPage = <span class="keyword">new</span> Vue.extend(TestPage)(&#123;</span><br><span class="line">      el: <span class="built_in">document</span>.querySelector(<span class="string">'.page-test'</span>),</span><br><span class="line">      propsData: &#123;</span><br><span class="line">        Api</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    init: init</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="提高组件代码的质量"><a href="#提高组件代码的质量" class="headerlink" title="提高组件代码的质量"></a>提高组件代码的质量</h2><ul>
+<li>数据以及函数的依赖解耦（依赖越少，可定义的接口越多，可复用率越好）举例海通社区页面顶部navbar定义一个通用组件：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 定义 Navbar.vue 组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar-inner"</span> <span class="attr">:class</span>=<span class="string">"&#123;[classId]: true&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span> @<span class="attr">click</span>=<span class="string">"$emit('onBackClick')"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span>&#123;&#123; title &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span> @<span class="attr">click</span>=<span class="string">"$emit('onRightClick')"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">  props: &#123;</span><br><span class="line"><span class="javascript">    <span class="comment">// 增加一个样式容器id以应对不同风格变动</span></span></span><br><span class="line">    classId: &#123;</span><br><span class="line"><span class="javascript">      type: <span class="built_in">String</span>,</span></span><br><span class="line"><span class="javascript">      <span class="keyword">default</span>: <span class="string">'default'</span></span></span><br><span class="line">    &#125;,</span><br><span class="line">    title: &#123;</span><br><span class="line"><span class="javascript">      type: <span class="built_in">String</span>,</span></span><br><span class="line"><span class="javascript">      <span class="keyword">default</span>: <span class="string">''</span></span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 引用组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Navbar</span> <span class="attr">title</span>=<span class="string">"我的特权"</span> </span></span><br><span class="line"><span class="tag">          @<span class="attr">on-left-click</span>=<span class="string">"onLeftClick"</span></span></span><br><span class="line"><span class="tag">          @<span class="attr">on-right-click</span>=<span class="string">"onRightClick"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">:classId</span>=<span class="string">"default"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"icon icon-back"</span> <span class="attr">slot</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span> <span class="attr">slot</span>=<span class="string">"right"</span>&gt;</span>会员规则<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">Navbar</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">  components: &#123;</span><br><span class="line"><span class="javascript">    Navbar: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'Navbar.vue'</span>),</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    onLeftClick() &#123;&#125;,</span><br><span class="line">    onRightClick() &#123;&#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>不要贪图一时的方便，将可能因环境变化而发生改动的数据放入可配置的js内。避免每次想切环境都要去修改对应的<br>举例，可根据打包参数进行转换的api地址前缀：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// xxx.config.js</span></span><br><span class="line"><span class="keyword">let</span> config = &#123;</span><br><span class="line">  apiPrefix: &#123;</span><br><span class="line">    ajzq: &#123;</span><br><span class="line">      test: <span class="string">'http://118.xxx.129.xxx:8082'</span>,</span><br><span class="line">      production: <span class="string">'https://nbapp.xxx.xxx:8890'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    zhzq: &#123;</span><br><span class="line">      test: <span class="string">'http://118.xxx.129.xxx:8082'</span>,</span><br><span class="line">      production: <span class="string">'http://180.167.90.xxx:8082'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;[__CLIENT__][__API__]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// webpack对应的全局定义 plugin</span></span><br><span class="line"><span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">  __API__: <span class="built_in">JSON</span>.stringify(process.env.API),</span><br><span class="line">  __CLIENT__: <span class="built_in">JSON</span>.stringify(process.env.CLIENT),</span><br><span class="line">&#125;),</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在执行npm script 的时候将配置信息带入，无需配置多条cmd (package.json)</span></span><br><span class="line"><span class="string">"config"</span>: &#123;</span><br><span class="line">  <span class="string">"env"</span>: <span class="string">"production"</span>,</span><br><span class="line">  <span class="string">"client"</span>: <span class="string">"ajzq"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"dev"</span>: <span class="string">"cross-env NODE_ENV=development API=test CLIENT=$npm_package_config_client npx webpack-dev-server"</span>,</span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"cross-env NODE_ENV=$npm_package_config_env CLIENT=$npm_package_config_client webpack --mode production"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 命令举例：</span></span><br><span class="line"><span class="comment">// &gt; npm config set [packagename]:env [env]</span></span><br><span class="line"><span class="comment">// &gt; npm config set [packagename]:client [clientName]</span></span><br><span class="line"><span class="comment">// &gt; npm run build</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意：应为平台的不同设置环境变量的语法不同，这里推荐用 cross-env 做兼容处理</span></span><br><span class="line"><span class="comment">// 注意：config set 这个语句是影响全局的，因此会记住上一次配置</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果组件内部的方法需要无视嵌入深度的，定义一个全局的eventbus来处理。改造之前的Navbar组件 <strong>注意点：这个事件的名称最好由一个字典配置管理</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar-inner"</span> <span class="attr">:class</span>=<span class="string">"&#123;[classId]: true&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span> @<span class="attr">click</span>=<span class="string">"onLeftClick"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="comment">// 这里是需要从引导js里引入 </span></span></span><br><span class="line"><span class="javascript"><span class="comment">// const EventEmitter = new Vue();</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> EventEmitter <span class="keyword">from</span> <span class="string">'EventEmitter'</span>;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">  methods: &#123;</span><br><span class="line">    onLeftClick() &#123;</span><br><span class="line"><span class="javascript">      <span class="comment">// 这个事件会广播到全项目中，需要捕获的组件只要监听就能响应</span></span></span><br><span class="line"><span class="javascript">      EventEmitter.$emit(<span class="string">'Navbar:onLeftClick'</span>);</span></span><br><span class="line"><span class="javascript">      <span class="comment">// EventEmitter.$on('Navbar:onLeftClick', () =&gt; &#123; ... &#125;);</span></span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>不要过度颗粒化组件，这点跟React不同，React因为有stateless组件的概念组件的颗粒度越高效率也会越高。Vue并不建议这么做，并且在客户定制化变化频繁的情况下也无法实现。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// React -- 颗粒化的无状态组件</span></span><br><span class="line"><span class="keyword">export</span> &#123;</span><br><span class="line">  Button: <span class="function">(<span class="params">props</span>) =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">Button</span> <span class="attr">onClick</span>=<span class="string">&#123;props.onClick&#125;</span>&gt;</span>&#123;props.text&#125;<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Vue -- 不推荐</span></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;button @click=<span class="string">"$emit('btnClick', $event)"</span>&gt;&#123;&#123;text&#125;&#125;&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>客户需求变化需要调整组件结构的时候，是否新起一个组件取决于对组件元有逻辑的破坏程度，可继承续用不到50%的可考虑新启组件开发。</p>
+</li>
+<li><p>因为 Vue组件不存在所谓controller层分离，因此数据接口的预处理尽量避免在组件内完成，最佳的办法是这些处理统一由容器组件（Page）完成，将组件需要的数据结构以组件 props的方式传入。</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">// 避免这样</span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">UserList</span> <span class="attr">:dataset</span>=<span class="string">"&#123;&#123;userList&#125;&#125;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">  ...</span><br><span class="line">  methods: &#123;</span><br><span class="line">    getUserlist() &#123;</span><br><span class="line"><span class="javascript">      axios.get(...).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 大量的数据整合处理</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// ...</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.userList = res;</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">// 更好的方式</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> UserModel <span class="keyword">from</span> <span class="string">'model/user'</span>;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">  ...</span><br><span class="line">  methods: &#123;</span><br><span class="line">    getUserlist() &#123;</span><br><span class="line"><span class="javascript">      <span class="comment">// 当接口产出的数据发生变化或者需要额外的接口合并的时候</span></span></span><br><span class="line"><span class="javascript">      <span class="comment">// 只需要修改 model/user.js 的相关逻辑，</span></span></span><br><span class="line"><span class="javascript">      <span class="comment">// 保持组件内数据产出的纯粹性可以有效提高扩展性跟维护性</span></span></span><br><span class="line"><span class="javascript">      <span class="comment">// 更进一步，userModel 可以跟 vuex 结合做到跨组件的数据状态保持</span></span></span><br><span class="line"><span class="javascript">      UserModel.getUserlist().then(<span class="function"><span class="params">resp</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.userList = res;</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line"><span class="javascript">    <span class="comment">// 如果babel支持  async/await</span></span></span><br><span class="line"><span class="javascript">    getUserlistAsync: <span class="keyword">async</span> () =&gt; &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">const</span> res = <span class="keyword">await</span> UserModel.getUserlist();</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.userList = res;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>谨慎使用全局植入函数或属性，在财富 react 商城项目中看到 app.js 中包含了大量的 window.xxx。如何避免？引入前面讲到的一个能贯穿项目的事件观察机制（Observe，Vue里的EventBus）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 极简的全局自定义监听 observe.js</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="comment">// 创建一个空对象</span></span><br><span class="line">    <span class="keyword">this</span>._handlers = <span class="built_in">Object</span>.create(<span class="literal">null</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 触发某自定义事件</span></span><br><span class="line"><span class="comment">   * @param &#123;String&#125; eventName 事件名</span></span><br><span class="line"><span class="comment">   * @param &#123;Mixed&#125; data 传递任意数据</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  fire(eventName, data) &#123;</span><br><span class="line">    <span class="keyword">let</span> handlers =</span><br><span class="line">      eventName <span class="keyword">in</span> <span class="keyword">this</span>._handlers &amp;&amp; <span class="keyword">this</span>._handlers[eventName].slice();</span><br><span class="line">    <span class="keyword">if</span> (!handlers) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; handlers.length; i += <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">let</span> handler = handlers[i];</span><br><span class="line">      <span class="keyword">if</span> (!handler.__calling) &#123;</span><br><span class="line">        handler.__calling = <span class="literal">true</span>;</span><br><span class="line">        handler.call(<span class="keyword">this</span>, data);</span><br><span class="line">        handler.__calling = <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 捕获事件</span></span><br><span class="line"><span class="comment">   * @param &#123;String&#125; eventName 事件名</span></span><br><span class="line"><span class="comment">   * @param &#123;Function&#125; handler 处理函数</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  on(eventName, handler) &#123;</span><br><span class="line">    <span class="keyword">let</span> handlers =</span><br><span class="line">      <span class="keyword">this</span>._handlers[eventName] || (<span class="keyword">this</span>._handlers[eventName] = []);</span><br><span class="line">    handlers.push(handler);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      cancel: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> index = handlers.indexOf(handler);</span><br><span class="line">        <span class="keyword">if</span> (~index) handlers.splice(index, <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用方法</span></span><br><span class="line"><span class="keyword">import</span> Observe <span class="keyword">from</span> <span class="string">'libs/observe'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 通常我们使用 api 产生的错误逻辑</span></span><br><span class="line"><span class="comment"> * 以及登录权限判断等系统级别的处理都可以通过订阅事件来响应触发。</span></span><br><span class="line"><span class="comment"> * 为API请求创建一个全局监听的对象，便于做提示信息以及log记录</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> APIObserver = <span class="keyword">new</span> Observe();</span><br><span class="line"></span><br><span class="line">axios(&#123;</span><br><span class="line">...</span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 比方token失效，这里的事件名称如果会量很多建议放到一个单独的字典文件中</span></span><br><span class="line">  <span class="keyword">if</span> (res.error_no == <span class="number">304</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> APIObserver.fire(<span class="string">'TOKEN_INVALID'</span>, res);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 其他错误统一处理</span></span><br><span class="line">  <span class="keyword">if</span> (res.error_no !== <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> APIObserver.fire(<span class="string">'API_FAILED'</span>, res);</span><br><span class="line">  &#125;</span><br><span class="line">  APIObserver.fire(<span class="string">'API_SUCCESS'</span>, res);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 模拟一个操作日志写入</span></span><br><span class="line">APIObserver.on(<span class="string">'log'</span>, message =&gt; &#123;</span><br><span class="line">  api.setLog(message);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123; APIObserver &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Vue (mounted) 或者 React (componentDidMount) </span></span><br><span class="line"><span class="comment">// import 这个实例化监听者后就可以做到全局事件的响应</span></span><br><span class="line"><span class="keyword">import</span> APIObserver <span class="keyword">from</span> <span class="string">'APIObserver'</span>;</span><br><span class="line">mounted() || componentDidMount() &#123;</span><br><span class="line">  APIObserver.on(<span class="string">'TOKEN_INVALID'</span>, () =&gt; &#123;</span><br><span class="line">    routerTo(<span class="string">'/login'</span>);</span><br><span class="line">    <span class="comment">// 甚至可以再发起一个事件广播</span></span><br><span class="line">    APIObserver.fire(<span class="string">'log'</span>, <span class="string">'redirect to login page.'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 注意：这种全局的方法监听要避免循环调用，对于一些只需要触发一次的操作要记得取消订阅。</span></span><br></pre></td></tr></table></figure>
+<h2 id="Mock-数据-amp-数据替换代理"><a href="#Mock-数据-amp-数据替换代理" class="headerlink" title="Mock 数据 &amp; 数据替换代理"></a>Mock 数据 &amp; 数据替换代理</h2><p>mock 方法比较多样，目前看不太推荐将开关做到 config 中，直接通过本地代理重定位 api url 地址是比较好的办法，这样在开发接口部分可用部分不可用的时候 mock 具体哪几个接口可以做到颗粒度的控制，目前代理的工具比较新的是有赞的 <a href="https://youzan.github.io/zan-proxy/book/" target="_blank" rel="noopener">zan proxy</a><br>还有一款使用起来复杂一些的类似库 <a href="http://wproxy.org/whistle/" target="_blank" rel="noopener">whistle</a>。<br>请求数据的代理转发在前端开发中扮演比较重要的角色：</p>
+<ul>
+<li>线上正式代码本地 hotfix （将正式js或者css替换成本地的文件，接口依然沿用正式的接口，做到修改bug上线能一把通过）</li>
+<li>替换线上正式的index.html文件，在尾部追加类似 vconsole.js 这样的调试代码，实现 h5 在手机上的热调试（手机的wifi需要配置代理）</li>
+<li>库预升级测试，升级某个库是否有风险，通过代理替换而无需去动源代码。</li>
+</ul>
+<p>除了本地替换的方式外，也可以利用先上的一些工具，比如 <a href="https://www.easy-mock.com" target="_blank" rel="noopener">easy-mock</a>，可以事先跟后端同学沟通好，将api route以及字段都在上面定义好，或者通过swagger导出的json结构自动生成对应的api，提高制作mock的效率。</p>
+<p>前端在调用api的时候用的比较多的比如postman等工具，但为了提高效率，建议在编辑器内整合。比如 vscode中的 REST Client 插件，可以快速的通过定一个一个.http文件并定义几个不同参数的 http 请求快速的在编辑器 Tab中得到数据结果，并可以方便的复制粘贴这些数据。</p>
+<p><img src="https://github.com/Huachao/vscode-restclient/raw/master/images/usage.gif" alt></p>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><ul>
+<li>不单纯的以文件类型来做目录管理</li>
+</ul>
+<p><img src="http://wakeup-images.oss-cn-hangzhou.aliyuncs.com/user/20181016145304zdibqcvKXWP0UBdbxJ" alt></p>
+<p>这个结构中，less，css，font，img 其实都是服务于修饰页面文档层面的，可做适当的优化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">assets</span><br><span class="line">  |- styles</span><br><span class="line">     |- less</span><br><span class="line">     |- css</span><br><span class="line">     |- ... 其他的一些样式超集语言</span><br><span class="line">  |- img</span><br><span class="line">  |- font</span><br><span class="line">libs</span><br><span class="line">  |- models // 数据模型包含api的操作的数据整理等，从组件中抽离</span><br><span class="line">  |- vendor // 第三方引入的组件，除了 npm 方式以外如果需要对源码做微调的也可以放在此处</span><br><span class="line">  |- utils // 工具合集</span><br><span class="line">components</span><br><span class="line">  |- pages // 页面级别的组件(也可以称为容器组件)</span><br><span class="line">  |- partials // 局部复用的UI组件（子容器，基本常见的header,bar等，也可以取名为layout，布局级别的组件)</span><br><span class="line">  |- modules // 功能性复用的组件目录</span><br><span class="line">    |- pagination // 举例分页组件</span><br><span class="line">      |- assets // scoped 样式目录 里面存放 样式文件图片等跟组件一起独立的资源</span><br><span class="line">      |- pagination.vue // 这里如果还要再做子组件，也可以pagination-xxx.vue</span><br><span class="line">config // 如果配置文件过多可以单独起一个目录</span><br><span class="line">  |- clients // 可针对不同客户单独的配置</span><br><span class="line">    |- urls.js</span><br><span class="line">  |- ..</span><br></pre></td></tr></table></figure>
+<p>项目结构的最低要求，未来扩展或者调整结构代码不需要大幅的调整，影响全局跟局部的文件目录最好有所区别。</p>
+<ul>
+<li>利用打包工具为资源设置别名路径</li>
+</ul>
+<p><img src="http://wakeup-images.oss-cn-hangzhou.aliyuncs.com/user/20181016151048SryyDjDgg548rzpKTs" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// webpack.config.js</span><br><span class="line">resolve: &#123;</span><br><span class="line">  extensions: [&apos;.js&apos;, &apos;.jsx&apos;, &apos;.css&apos;, &apos;.less&apos;, ...],</span><br><span class="line">  modules: [path.resolve(&apos;node_modules&apos;), path.resolve(&apos;src&apos;)],</span><br><span class="line">  alias: &#123;</span><br><span class="line">    common: path.resolve(&apos;src/common&apos;),</span><br><span class="line">    utils: path.resolve(&apos;src/utils&apos;),</span><br><span class="line">    static: path.resolve(&apos;src/static&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 之后的引用就可以变为 </span><br><span class="line">import Utils from &apos;utils&apos;;</span><br><span class="line">import General from &apos;common/general&apos;;</span><br><span class="line">import AppConfig from &apos;utils/appConfig&apos;;</span><br><span class="line">import FavoriteBtn from &apos;@/favorite-btn&apos;;</span><br><span class="line"></span><br><span class="line">// 好处：万一需要优化调整目录，不至于要逐个去修改引入路径，只需要调整webpack 的别名配置路径。</span><br></pre></td></tr></table></figure>
+<h2 id="后端接口相关"><a href="#后端接口相关" class="headerlink" title="后端接口相关"></a>后端接口相关</h2><p>excel文件不利于更新及时，且想要搜索或者看一个大概的数据结构非常不便，<br>建议后端采用 swagger 类似的方式，对于前端开发来讲很直观，提高效率，这个需要后端的同学推进下。</p>
+<p><img src="http://opencredo.com/wp-content/uploads/2015/07/Swagger-UI-Screen-Shot-2015-07-17-112618.png" alt></p>
+<p><img src="http://wakeup-images.oss-cn-hangzhou.aliyuncs.com/user/20181016143909a6abYBpFSvjgKhKmlK" alt></p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://linyupark.github.io">linyupark@gmail.com</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://linyupark.github.io/2018/10/16/web-development-nb-crh-share/">https://linyupark.github.io/2018/10/16/web-development-nb-crh-share/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank">知识共享 署名-非商业性使用-禁止演绎 4.0 国际 许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/images/wepay.jpeg" title="wechat">
+        </label>
+      
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/前端分享/">前端分享</a>
+            
+              <a href="/tags/框架介绍/">框架介绍</a>
+            
+              <a href="/tags/架构改进/">架构改进</a>
+            
+              <a href="/tags/牛邦/">牛邦</a>
+            
+              <a href="/tags/财人汇/">财人汇</a>
+            
+              <a href="/tags/CRH/">CRH</a>
+            
+              <a href="/tags/TradeNB/">TradeNB</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2019/01/31/web-component-for-nb/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">自建轮子之 Stencil Web Component</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+    <div id="gitalk-container"></div>
+    <script>
+    var gitalk = new Gitalk({
+      clientID: 'b1c4826845c4339dd169',
+      clientSecret: 'a411c7ca3cdd0346286b39b2308ec7a74e0ba915',
+      repo: 'linyupark.github.io',
+      owner: 'linyupark',
+      admin: ['linyupark'],
+      id: location.pathname,
+      distractionFreeMode: false
+    });
+    gitalk.render('gitalk-container');
+    </script>
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:linyupark@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/linyupark" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="copyright-year">
+    
+    &copy; 2019 
+    &nbsp; / &nbsp; 
+    <span class="author">linyupark@gmail.com</span>
+  </span>
+  <span style="font-size: 14px;">
+    友链：<a href="https://www.kalman03.com/">老夫正年轻</a>
+    &nbsp; / &nbsp; 
+    <a href="http://www.airsupplymusic.cn/">Air Supply空气补给中文网</a>
+  </span>
+</div>
+<br>
+
+
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

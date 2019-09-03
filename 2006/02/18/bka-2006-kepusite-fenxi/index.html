@@ -227,7 +227,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#制作的过程和思路"><span class="toc-text">制作的过程和思路</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#制作的过程和思路"><span class="toc-text">制作的过程和思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#兼容性和标签使用的合理性"><span class="toc-text">兼容性和标签使用的合理性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结语"><span class="toc-text">总结语</span></a></li></ol>
     </div>
   </div>
 
@@ -252,11 +252,9 @@
 <p>大体的CSS设置完了下面要做的就是页面的规划了，你想做上中下三行的布局？或是头部一大块，中间有左右两小块的布局？我这里使用的是三行布局，因此我将#header(头)#center(中)#footer(脚)做了CSS的定位，并将他们都放在一个叫#out的容器里。所以网页文件里的代码就有以下的div层次：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"out"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"header"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!-- #header end 头部结束--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"center"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!-- #center end 中部结束--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"footer"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!-- #footer end 尾部结束--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>技巧:不能确保能直接将他们区分开来的话，建议你在div结束时加上一个注释<br>完成大体布局框架后，省下的就是将内容合理的放置在相应的div里面</p>
-<p>####兼容性和标签使用的合理性</p>
-<p>因为CSS支持不一致导致的种种问题我想大家应该都有所了解，我个人认为在制作过程中大可不必抱有一步到位的心态，可以先用一个浏览器来进行测试（我想首先考虑的还是IE6），在确保能在主流浏览器能正常浏览器的情况下再去做兼容性的修改。</p>
+<h4 id="兼容性和标签使用的合理性"><a href="#兼容性和标签使用的合理性" class="headerlink" title="兼容性和标签使用的合理性"></a>兼容性和标签使用的合理性</h4><p>因为CSS支持不一致导致的种种问题我想大家应该都有所了解，我个人认为在制作过程中大可不必抱有一步到位的心态，可以先用一个浏览器来进行测试（我想首先考虑的还是IE6），在确保能在主流浏览器能正常浏览器的情况下再去做兼容性的修改。</p>
 <p>HTML提供的标签其实并不少，不要一味去使用div（这和滥用table没有区别），活用和合理的使用每一个标签，这样即使脱离了CSS同样不缺乏美观。</p>
-<p>####总结语</p>
-<p>可能有朋友要问为什么只讲述了下制作的概略而没有详细的分析，我只能说抱歉了，我不想把大家当傻瓜看，CSS+XHTML制作网页没有固定的制作规则，我想每人都应该会有自己喜欢的制作方法，讲的过于详细可能还会误导大家^_^</p>
+<h4 id="总结语"><a href="#总结语" class="headerlink" title="总结语"></a>总结语</h4><p>可能有朋友要问为什么只讲述了下制作的概略而没有详细的分析，我只能说抱歉了，我不想把大家当傻瓜看，CSS+XHTML制作网页没有固定的制作规则，我想每人都应该会有自己喜欢的制作方法，讲的过于详细可能还会误导大家^_^</p>
 <p>上面所提到的是我今天制作这张页面所能想到的，希望能给大家带来点提示，再次感谢您能耐心的看完本篇文章</p>
 
       
